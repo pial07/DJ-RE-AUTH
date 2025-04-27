@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import decouple
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",     # for React running locally
+    "http://127.0.0.1:5173",     # sometimes localhost uses 127.0.0.1
+    "http://localhost:8000",     # if your frontend also runs on Django server
+    "http://127.0.0.1:8000",     # just to be safe
+]
+
 
 # Application definition
 
@@ -37,6 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #external apps
+    'rest_framework',
+    "corsheaders",
+    #internal apps
+    "users",
 ]
 
 MIDDLEWARE = [
