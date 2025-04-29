@@ -1,6 +1,8 @@
 Django
 django-rest-framework
+djoser
 djangorestframework-simplejwt
 django-cors-headers
-django-decouple
+python-decouple
 pytz
+pyjwt
